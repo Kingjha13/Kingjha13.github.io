@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
         header.hero {
             background: linear-gradient(to right, #1e3c72, #2a5298);
             color: #fff;
-            padding: 100px 20px 80px;
+            padding: 120px 20px 80px;
             text-align: center;
             animation: fadeInDown 1.2s ease;
         }
@@ -34,31 +35,33 @@
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: #00bcd4; /* Cyan color for better contrast */
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .social-link {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             color: white;
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 30px;
             transition: background 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .social-link:hover {
@@ -76,18 +79,21 @@
         }
 
         .about, .contact {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: #2a5298;
         }
 
         p {
             font-size: 1.1rem;
             line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
         }
 
         .highlight {
@@ -96,17 +102,18 @@
         }
 
         .contact-links {
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .contact-link {
             display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
+            margin: 12px;
+            padding: 12px 25px;
             background-color: #2a5298;
             color: #fff;
-            border-radius: 25px;
+            border-radius: 30px;
             text-decoration: none;
+            font-size: 1.1rem;
             transition: background 0.3s ease;
         }
 
@@ -118,7 +125,7 @@
             background-color: #2a5298;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             margin-top: 40px;
         }
 
@@ -130,6 +137,58 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .social-link {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .about, .contact {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .social-link {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            .contact-link {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -138,7 +197,7 @@
         <h1>Hi, I'm Avanish Kumar Jha</h1>
         <p class="fadeIn">An enthusiastic Android Developer & Open Source Contributor</p>
         <div class="social-links">
-            <a href="https://linkedin.com/in/avanish-kumar-jha" class="social-link" target="_blank">
+            <a href="https://www.linkedin.com/in/avanish-kumar-jha-129374261" class="social-link" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2023.svg" alt="LinkedIn" class="social-icon"> LinkedIn
             </a>
             <a href="https://github.com/Kingjha13" class="social-link" target="_blank">
@@ -159,10 +218,10 @@
 
 <section class="contact">
     <h2>Contact Me</h2>
-    <p>If you're looking to build an Android app or collaborate on open-source projects, I'd love to connect!</p>
+    <p>I¿m passionate about building Android apps and collaborating on exciting open-source projects. If you're interested in sharing ideas or working together, feel free to reach out ¿ I¿d love to connect!</p>
     <div class="contact-links">
-        <a href="avnishjha277@gmail.com" class="contact-link">Send Email</a>
-        <a href="2303051050150@paruluniversity.ac.in" class="contact-link">University Email</a>
+        <a href="mailto:avnishjha277@gmail.com" class="contact-link">Send Email</a>
+        <a href="mailto:2303051050150@paruluniversity.ac.in" class="contact-link">University Email</a>
     </div>
 </section>
 
