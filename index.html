@@ -461,61 +461,50 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: #0f172a;
       color: #fff;
       line-height: 1.6;
-      overflow-x: hidden;
-      animation: gradientShift 10s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
     }
 
     header {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-      gap: 40px;
-      flex-wrap: wrap;
-      background: radial-gradient(circle at center, #1e3a8a, #1e293b);
-      animation: fadeIn 1.5s ease-in-out;
+      padding: 60px 20px 40px;
+      background: linear-gradient(120deg, #1e3c72, #2a5298);
+      animation: fadeInDown 1s ease-out;
     }
 
-    header img {
-      width: 220px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-      transition: transform 0.4s;
+    header img.profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
-    header img:hover {
-      transform: scale(1.05);
-    }
-
-    .intro {
+    header .intro {
       max-width: 600px;
+      margin: 20px;
+      text-align: center;
     }
 
-    .intro h1 {
+    header h1 {
       font-size: 2.5rem;
       color: #facc15;
     }
 
-    .intro p {
+    header p {
       color: #a5f3fc;
       font-size: 1.2rem;
       margin-top: 10px;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     section {
@@ -542,11 +531,6 @@
 
     .badges img, .links img {
       height: 40px;
-      transition: transform 0.3s ease;
-    }
-
-    .badges img:hover, .links img:hover {
-      transform: scale(1.15);
     }
 
     .projects table {
@@ -575,31 +559,109 @@
     }
 
     @media (max-width: 768px) {
-      header { flex-direction: column; }
       .stats img { max-width: 100%; margin-bottom: 15px; }
+      header { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="WhatsApp Image 2024-12-29 at 10.39.31_8e3afc8b.jpg" alt="Avanish Kumar Jha" />
+  <img src="avanish.jpg" alt="Avanish Kumar Jha" class="profile-img" />
   <div class="intro">
     <h1>👋 Hey, I'm <span style="color:#f87171">Avanish Kumar Jha</span></h1>
     <p>Android | Kotlin | Multiplatform Developer</p>
+    <img src="WhatsApp Image 2024-12-29 at 10.39.31_8e3afc8b.jpg" alt="Side Image" width="200" style="border-radius: 12px; margin-top: 15px;"/>
   </div>
 </header>
 
-<!-- KEEP ALL YOUR SECTIONS HERE AS BEFORE, NO REMOVAL -->
-
-<!-- Example: About Me -->
 <section>
   <h2>🎓 About Me</h2>
   <p>I’m a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong> and currently interning as an Android Developer at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a>. Passionate about Kotlin, Jetpack, Firebase, and cross-platform with KMP!</p>
   <p>Member of <strong>PIERC</strong> club organizing hackathons & tech workshops.</p>
 </section>
 
-<!-- You can continue including your previous content here (badges, links, projects, stats, etc.) -->
+<section class="badges">
+  <h2>🛠️ Tech Stack</h2>
+  <a href="#"><img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Jetpack-00C853?style=for-the-badge&logo=android&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white"/></a>
+</section>
+
+<section class="links">
+  <h2>💻 Coding Platforms</h2>
+  <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank">
+    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" />
+  </a>
+  <a href="https://leetcode.com/u/2303051050150/" target="_blank">
+    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" />
+  </a>
+  <a href="https://www.codechef.com/users/avanish_50" target="_blank">
+    <img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" />
+  </a>
+</section>
+
+<section class="projects">
+  <h2>📂 Projects</h2>
+  <table>
+    <tr>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Link</th>
+    </tr>
+    <tr>
+      <td>Firebase Auth App</td>
+      <td>Seamless user auth with Firebase - Clean UI & secure logic.</td>
+      <td><a href="https://github.com/Kingjha13/Firebase_authonti" target="_blank" style="color:#38bdf8;">GitHub</a></td>
+    </tr>
+    <tr>
+      <td>Animation Demo</td>
+      <td>UI transitions to enhance user experience in Android.</td>
+      <td><a href="https://github.com/Kingjha13/AnimationDemo" target="_blank" style="color:#38bdf8;">GitHub</a></td>
+    </tr>
+  </table>
+</section>
+
+<section class="projects">
+  <h2>🎥 Project Demos</h2>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Instagram Video Link</th>
+    </tr>
+    <tr>
+      <td>Word Game</td>
+      <td><a href="https://www.instagram.com/avanishjha.13/reel/DANSHS3oYxU/" target="_blank" style="color:#4ade80;">Watch here</a></td>
+    </tr>
+    <tr>
+      <td>Music Player & Chat App</td>
+      <td><a href="https://www.instagram.com/reel/DHWpU8UxzKj/" target="_blank" style="color:#4ade80;">Watch here</a></td>
+    </tr>
+  </table>
+</section>
+
+<section class="stats">
+  <h2>📊 GitHub Stats</h2>
+  <img src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical" alt="Top Languages" />
+  <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" alt="GitHub Streak" style="max-width: 100%; margin-top:20px;" />
+</section>
+
+<section class="connect">
+  <h2>🌐 Connect With Me</h2>
+  <a href="https://instagram.com/avanishjha.13" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
+  <a href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="mailto:avnishkumar130603@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+</section>
 
 <footer>
   &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
