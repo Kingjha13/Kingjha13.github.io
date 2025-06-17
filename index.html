@@ -230,227 +230,217 @@
 </body>
 </html>
  -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avanish Kumar Jha | Android Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avanish Kumar Jha | Android Dev Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Roboto', sans-serif;
     }
 
     body {
-      background: #f5f8ff;
-      color: #333;
+      background: #0f172a;
+      color: #fff;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: white;
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 60px 20px 40px;
+      background: linear-gradient(120deg, #1e3c72, #2a5298);
+      animation: fadeInDown 1s ease-out;
     }
 
     header img {
       width: 160px;
       height: 160px;
-      object-fit: cover;
       border-radius: 50%;
-      border: 5px solid #fff;
+      border: 4px solid #fff;
       margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
+      color: #facc15;
     }
 
     header p {
+      color: #a5f3fc;
       font-size: 1.2rem;
-      color: #00d1d1;
       margin-top: 10px;
     }
 
-    .typing {
-      display: block;
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .typing-svg {
       margin: 20px auto;
+      display: block;
     }
 
     section {
-      max-width: 1000px;
+      padding: 40px 20px;
+      max-width: 960px;
       margin: auto;
-      padding: 50px 20px;
     }
 
     h2 {
-      font-size: 2rem;
-      color: #2a5298;
+      text-align: center;
+      color: #38bdf8;
       margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .badges, .links, .projects, .stats, .connect {
       text-align: center;
     }
 
-    .social-links, .contact-links, .code-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 25px 0;
-    }
-
-    .social-links a, .contact-links a {
-      background-color: #2a5298;
-      color: white;
-      padding: 12px 22px;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: background 0.3s ease;
-    }
-
-    .social-links a:hover, .contact-links a:hover {
-      background-color: #1e3c72;
-    }
-
-    .badges {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .badges img {
+    .badges a, .links a {
       margin: 8px;
+      display: inline-block;
+    }
+
+    .badges img, .links img {
+      height: 40px;
     }
 
     .projects table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 20px;
     }
 
     .projects th, .projects td {
-      padding: 12px;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
+      border: 1px solid #334155;
+      padding: 10px;
+      color: #e2e8f0;
+    }
+
+    .stats img {
+      max-width: 48%;
+      margin: 1%;
     }
 
     footer {
-      background: #2a5298;
-      color: white;
+      background: #1e293b;
+      padding: 20px;
       text-align: center;
-      padding: 25px 20px;
-      margin-top: 50px;
+      color: #94a3b8;
+      margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .projects table {
-        font-size: 0.9rem;
-      }
-
-      header img {
-        width: 120px;
-        height: 120px;
-      }
+    @media (max-width: 768px) {
+      .stats img { max-width: 100%; margin-bottom: 15px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="avanish.jpg" alt="Avanish Kumar Jha">
-  <h1>👋 Hey there, I'm <span style="color:#ffcc70">Avanish Kumar Jha</span></h1>
+  <img src="avanish.jpg" alt="Avanish Kumar Jha" />
+  <h1>👋 Hey, I'm <span style="color:#f87171">Avanish Kumar Jha</span></h1>
   <p>Android | Kotlin | Multiplatform Developer</p>
-  <img class="typing" src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&width=500&height=50&lines=Jetpack+Compose+%7C+Firebase+%7C+Open+Source+Contributor" alt="Typing SVG" />
+  <img class="typing-svg" src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&width=500&height=50&lines=Jetpack+Wizard!;Firebase+Dev+%7C+UI%2FUX+Craftsman!" alt="Typing SVG"/>
 </header>
 
 <section>
   <h2>🎓 About Me</h2>
-  <p>I’m a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong>. Currently, I’m interning as an <strong>Android Developer</strong> at <a href="https://graspit.co.in" target="_blank">GraspIt</a>.</p>
-  <p>💡 I love crafting beautiful, user-centric mobile apps using Kotlin, Jetpack Compose & Firebase. I'm an active contributor to open source, and a part of <strong>PIERC</strong>, where I help run innovation-driven events.</p>
-
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Kingjha13" target="_blank">GitHub</a>
-    <a href="https://instagram.com/avanishjha.13" target="_blank">Instagram</a>
-  </div>
-</section>
-
-<section>
-  <h2>💻 Coding Platforms</h2>
-  <div class="code-links">
-    <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank">HackerRank</a>
-    <a href="https://www.codechef.com/users/avanish_50" target="_blank">CodeChef</a>
-    <a href="https://leetcode.com/u/2303051050150/" target="_blank">LeetCode</a>
-  </div>
+  <p>I’m a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong> and currently interning as an Android Developer at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a>. Passionate about Kotlin, Jetpack, Firebase, and cross-platform with KMP!</p>
+  <p>Member of <strong>PIERC</strong> club organizing hackathons & tech workshops.</p>
 </section>
 
 <section class="badges">
   <h2>🛠️ Tech Stack</h2>
-  <img src="https://img.shields.io/badge/Kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
-  <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/Firebase-%23039BE5.svg?style=for-the-badge&logo=firebase" />
-  <img src="https://img.shields.io/badge/Jetpack-%2300C853.svg?style=for-the-badge&logo=android&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white" />
+  <a href="#"><img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Jetpack-00C853?style=for-the-badge&logo=android&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white"/></a>
+</section>
+
+<section class="links">
+  <h2>💻 Coding Platforms</h2>
+  <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank">
+    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" />
+  </a>
+  <a href="https://leetcode.com/u/2303051050150/" target="_blank">
+    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" />
+  </a>
+  <a href="https://www.codechef.com/users/avanish_50" target="_blank">
+    <img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" />
+  </a>
 </section>
 
 <section class="projects">
   <h2>📂 Projects</h2>
-  <ul>
-    <li>🔐 <strong>Firebase Auth App</strong> – <a href="https://github.com/Kingjha13/Firebase_authonti" target="_blank">GitHub</a></li>
-    <li>🎞️ <strong>Animation Demo</strong> – <a href="https://github.com/Kingjha13/AnimationDemo" target="_blank">GitHub</a></li>
-  </ul>
-</section>
-
-<section>
-  <h2>🎬 Project Demos</h2>
   <table>
     <tr>
-      <th>Title</th>
-      <th>Instagram Link</th>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Link</th>
     </tr>
     <tr>
-      <td>Word Game</td>
-      <td><a href="https://www.instagram.com/avanishjha.13/reel/DANSHS3oYxU/" target="_blank">Watch here</a></td>
+      <td>Firebase Auth App</td>
+      <td>Seamless user auth with Firebase - Clean UI & secure logic.</td>
+      <td><a href="https://github.com/Kingjha13/Firebase_authonti" target="_blank" style="color:#38bdf8;">GitHub</a></td>
     </tr>
     <tr>
-      <td>Music Player & Chat App</td>
-      <td><a href="https://www.instagram.com/reel/DHWpU8UxzKj/" target="_blank">Watch here</a></td>
+      <td>Animation Demo</td>
+      <td>UI transitions to enhance user experience in Android.</td>
+      <td><a href="https://github.com/Kingjha13/AnimationDemo" target="_blank" style="color:#38bdf8;">GitHub</a></td>
     </tr>
   </table>
 </section>
 
-<section class="contact-links">
-  <h2>📬 Contact Me</h2>
-  <div class="contact-links">
-    <a href="mailto:avnishkumar130603@gmail.com">Personal Email</a>
-    <a href="mailto:2303051050150@paruluniversity.ac.in">University Email</a>
-  </div>
+<section class="projects">
+  <h2>🎥 Project Demos</h2>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Instagram Video Link</th>
+    </tr>
+    <tr>
+      <td>Word Game</td>
+      <td><a href="https://www.instagram.com/avanishjha.13/reel/DANSHS3oYxU/" target="_blank" style="color:#4ade80;">Watch here</a></td>
+    </tr>
+    <tr>
+      <td>Music Player & Chat App</td>
+      <td><a href="https://www.instagram.com/reel/DHWpU8UxzKj/" target="_blank" style="color:#4ade80;">Watch here</a></td>
+    </tr>
+  </table>
 </section>
 
-<section>
+<section class="stats">
   <h2>📊 GitHub Stats</h2>
-  <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical" width="47%" />
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical" width="47%" />
-  </p>
-  <p align="center">
-    <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" width="95%" />
-  </p>
+  <img src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical" alt="Top Languages" />
+  <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" alt="GitHub Streak" style="max-width: 100%; margin-top:20px;" />
+</section>
+
+<section class="connect">
+  <h2>🌐 Connect With Me</h2>
+  <a href="https://instagram.com/avanishjha.13" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
+  <a href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="mailto:avnishkumar130603@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
 </section>
 
 <footer>
-  <p>&copy; 2025 Avanish Kumar Jha | Android Developer | Parul University</p>
+  &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
 </footer>
 
 </body>
