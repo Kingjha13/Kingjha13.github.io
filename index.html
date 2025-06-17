@@ -230,7 +230,7 @@
 </body>
 </html>
  -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -444,5 +444,174 @@
   &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
 </footer>
 
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avanish Kumar Jha | Android Dev Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0f172a, #1e293b);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 60px 20px;
+      animation: fadeInSlide 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInSlide {
+      from {opacity: 0; transform: translateX(-50px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+
+    .photo-box img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 5px solid #22d3ee;
+      box-shadow: 0 0 30px #22d3ee66;
+      transition: transform 0.4s;
+    }
+
+    .photo-box img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .intro-text {
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .intro-text h1 {
+      font-size: 2.8rem;
+      color: #facc15;
+    }
+
+    .intro-text h1 span {
+      color: #f87171;
+    }
+
+    .intro-text p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #a5f3fc;
+    }
+
+    .animated-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at center, #1e293b 10%, transparent 70%);
+      animation: pulse 6s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #38bdf8;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .badges, .links, .projects, .stats, .connect {
+      text-align: center;
+    }
+
+    .badges a, .links a {
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .badges img, .links img {
+      height: 44px;
+      transition: transform 0.3s ease;
+    }
+
+    .badges img:hover, .links img:hover {
+      transform: scale(1.2);
+    }
+
+    .projects table, .projects th, .projects td {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #334155;
+      padding: 12px;
+      color: #e2e8f0;
+    }
+
+    .stats img {
+      max-width: 45%;
+      margin: 1% 2%;
+    }
+
+    footer {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .photo-box img {
+        margin-bottom: 20px;
+      }
+
+      .stats img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-bg"></div>
+  <header>
+    <div class="photo-box">
+      <img src="avanish.jpg" alt="Avanish Kumar Jha" />
+    </div>
+    <div class="intro-text">
+      <h1>👋 Hey, I'm <span>Avanish Kumar Jha</span></h1>
+      <p>Android | Kotlin | Multiplatform Developer</p>
+      <p>Currently at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a></p>
+    </div>
+  </header>
+
+  <!-- Add other sections like About, Badges, Projects, Stats, Connect with Me... -->
+
+  <footer>
+    &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
+  </footer>
 </body>
 </html>
