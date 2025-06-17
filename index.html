@@ -464,50 +464,48 @@
       background: #0f172a;
       color: #fff;
       line-height: 1.6;
-      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(120deg, #1e3c72, #2a5298);
+      padding: 60px 20px 40px;
+      animation: fadeInDown 1s ease-out;
     }
 
     .hero {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(120deg, #1e3c72, #2a5298);
-      padding: 60px 20px;
-      animation: fadeInDown 1.2s ease-out;
+      flex-wrap: wrap;
+      gap: 30px;
     }
 
     .hero img {
       max-width: 300px;
-      border-radius: 16px;
+      border-radius: 50%;
       margin-right: 40px;
       box-shadow: 0 0 25px rgba(0,0,0,0.4);
       animation: glow 2s infinite alternate;
     }
 
-    .hero-content {
-      max-width: 600px;
+    @keyframes glow {
+      from { box-shadow: 0 0 25px rgba(0,0,0,0.4); }
+      to { box-shadow: 0 0 45px rgba(255,255,255,0.3); }
     }
 
-    .hero-content h1 {
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
       font-size: 2.5rem;
       color: #facc15;
-      margin-bottom: 10px;
     }
 
-    .hero-content p {
+    .hero-text p {
       color: #a5f3fc;
       font-size: 1.2rem;
-    }
-
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 10px #facc15; }
-      to { box-shadow: 0 0 30px #facc15; }
+      margin-top: 10px;
     }
 
     section {
@@ -562,35 +560,29 @@
     }
 
     @media (max-width: 768px) {
+      .stats img { max-width: 100%; margin-bottom: 15px; }
       .hero {
         flex-direction: column;
         text-align: center;
       }
-
       .hero img {
-        margin: 0 0 20px;
-      }
-
-      .stats img {
-        max-width: 100%;
-        margin-bottom: 15px;
+        margin: 0 auto 20px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER SECTION WITH IMAGE LEFT AND TEXT RIGHT -->
-<div class="hero">
-  <img src="WhatsApp Image 2024-12-29 at 10.39.31_8e3afc8b.jpg" alt="Avanish Image"/>
-  <div class="hero-content">
-    <h1>👋 Hey, I'm <span style="color:#f87171">Avanish Kumar Jha</span></h1>
-    <p>Android | Kotlin | Multiplatform Developer<br/>
-       Firebase | Jetpack | UI/UX Craftsman</p>
+<header>
+  <div class="hero">
+    <img src="avanish.jpg" alt="Avanish Kumar Jha" />
+    <div class="hero-text">
+      <h1>👋 Hey, I'm <span style="color:#f87171">Avanish Kumar Jha</span></h1>
+      <p>Android | Kotlin | Multiplatform Developer</p>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- REST SECTIONS SAME AS BEFORE -->
 <section>
   <h2>🎓 About Me</h2>
   <p>I’m a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong> and currently interning as an Android Developer at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a>. Passionate about Kotlin, Jetpack, Firebase, and cross-platform with KMP!</p>
@@ -662,8 +654,8 @@
 <section class="stats">
   <h2>📊 GitHub Stats</h2>
   <img src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical" alt="Top Languages" />
-  <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&langs_count=10&layout=compact&theme=radical&hide=javascript,html,css" alt="Top Languages" />
+  <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" alt="GitHub Streak" style="max-width: 100%; margin-top:20px;" />
 </section>
 
 <section class="connect">
@@ -685,4 +677,3 @@
 
 </body>
 </html>
-
