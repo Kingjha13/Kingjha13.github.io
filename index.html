@@ -447,7 +447,7 @@
 </body>
 </html>
  -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -461,76 +461,66 @@
     }
 
     body {
-      background: linear-gradient(145deg, #0f172a, #1e293b);
+      background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #fff;
+      line-height: 1.6;
       overflow-x: hidden;
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
     header {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: space-around;
-      padding: 60px 20px;
-      animation: fadeInSlide 1.2s ease-out forwards;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: radial-gradient(circle at center, #1e3a8a, #1e293b);
+      animation: fadeIn 1.5s ease-in-out;
     }
 
-    @keyframes fadeInSlide {
-      from {opacity: 0; transform: translateX(-50px);}
-      to {opacity: 1; transform: translateX(0);}
-    }
-
-    .photo-box img {
-      width: 250px;
-      height: 250px;
+    header img {
+      width: 220px;
+      height: 280px;
       object-fit: cover;
       border-radius: 20px;
-      border: 5px solid #22d3ee;
-      box-shadow: 0 0 30px #22d3ee66;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
       transition: transform 0.4s;
     }
 
-    .photo-box img:hover {
-      transform: scale(1.05) rotate(-2deg);
+    header img:hover {
+      transform: scale(1.05);
     }
 
-    .intro-text {
+    .intro {
       max-width: 600px;
-      text-align: left;
     }
 
-    .intro-text h1 {
-      font-size: 2.8rem;
+    .intro h1 {
+      font-size: 2.5rem;
       color: #facc15;
     }
 
-    .intro-text h1 span {
-      color: #f87171;
-    }
-
-    .intro-text p {
+    .intro p {
+      color: #a5f3fc;
       font-size: 1.2rem;
       margin-top: 10px;
-      color: #a5f3fc;
     }
 
-    .animated-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: radial-gradient(circle at center, #1e293b 10%, transparent 70%);
-      animation: pulse 6s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.2); opacity: 0.6; }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     section {
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 960px;
       margin: auto;
     }
 
@@ -546,30 +536,34 @@
     }
 
     .badges a, .links a {
-      margin: 10px;
+      margin: 8px;
       display: inline-block;
     }
 
     .badges img, .links img {
-      height: 44px;
+      height: 40px;
       transition: transform 0.3s ease;
     }
 
     .badges img:hover, .links img:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
     }
 
-    .projects table, .projects th, .projects td {
+    .projects table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .projects th, .projects td {
       border: 1px solid #334155;
-      padding: 12px;
+      padding: 10px;
       color: #e2e8f0;
     }
 
     .stats img {
-      max-width: 45%;
-      margin: 1% 2%;
+      max-width: 48%;
+      margin: 1%;
     }
 
     footer {
@@ -577,41 +571,39 @@
       padding: 20px;
       text-align: center;
       color: #94a3b8;
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .photo-box img {
-        margin-bottom: 20px;
-      }
-
-      .stats img {
-        max-width: 90%;
-      }
+      header { flex-direction: column; }
+      .stats img { max-width: 100%; margin-bottom: 15px; }
     }
   </style>
 </head>
 <body>
-  <div class="animated-bg"></div>
-  <header>
-    <div class="photo-box">
-      <img src="avanish.jpg" alt="Avanish Kumar Jha" />
-    </div>
-    <div class="intro-text">
-      <h1>👋 Hey, I'm <span>Avanish Kumar Jha</span></h1>
-      <p>Android | Kotlin | Multiplatform Developer</p>
-      <p>Currently at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a></p>
-    </div>
-  </header>
 
-  <!-- Add other sections like About, Badges, Projects, Stats, Connect with Me... -->
+<header>
+  <img src="WhatsApp Image 2024-12-29 at 10.39.31_8e3afc8b.jpg" alt="Avanish Kumar Jha" />
+  <div class="intro">
+    <h1>👋 Hey, I'm <span style="color:#f87171">Avanish Kumar Jha</span></h1>
+    <p>Android | Kotlin | Multiplatform Developer</p>
+  </div>
+</header>
 
-  <footer>
-    &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
-  </footer>
+<!-- KEEP ALL YOUR SECTIONS HERE AS BEFORE, NO REMOVAL -->
+
+<!-- Example: About Me -->
+<section>
+  <h2>🎓 About Me</h2>
+  <p>I’m a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong> and currently interning as an Android Developer at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a>. Passionate about Kotlin, Jetpack, Firebase, and cross-platform with KMP!</p>
+  <p>Member of <strong>PIERC</strong> club organizing hackathons & tech workshops.</p>
+</section>
+
+<!-- You can continue including your previous content here (badges, links, projects, stats, etc.) -->
+
+<footer>
+  &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
+</footer>
+
 </body>
 </html>
