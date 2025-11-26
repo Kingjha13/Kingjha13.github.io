@@ -452,251 +452,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Avanish Kumar Jha | Android Dev Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
+  <title>Avanish Kumar Jha | Android & AR Developer Portfolio</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0f172a;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0f1f;
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.7;
       scroll-behavior: smooth;
     }
 
+    /* HERO SECTION */
     .hero {
+      padding: 60px 20px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(120deg, #1e3c72, #2a5298);
-      padding: 60px 20px;
-      animation: fadeInDown 1.2s ease-out;
+      background: linear-gradient(135deg,#1f3b73,#12172b,#000);
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+      animation: fadeIn 1.3s ease;
     }
 
     .hero img {
       width: 280px;
       height: 280px;
-      object-fit: cover;
       border-radius: 50%;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
-      backdrop-filter: blur(5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: glow 2s ease-in-out infinite alternate;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.3);
+      box-shadow: 0 0 20px #38bdf8, 0 0 60px #1e40af;
+      animation: glow 2s infinite alternate ease-in-out;
     }
 
-    .hero img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7), 0 0 18px rgba(255, 255, 255, 0.3);
-    }
+    .hero-content { margin-left: 40px; max-width: 600px; }
+    .hero-content h1 { font-size: 2.7rem; color: #facc15; }
+    .hero-content p { font-size: 1.2rem; color: #a5f3fc; }
 
-    .hero-content {
-      max-width: 600px;
-      margin-left: 40px;
-    }
+    @keyframes fadeIn { from{opacity: 0;} to {opacity:1;} }
+    @keyframes glow { from{box-shadow: 0 0 15px #38bdf8;} to{box-shadow: 0 0 40px #38bdf8;} }
 
-    .hero-content h1 {
-      font-size: 2.5rem;
-      color: #facc15;
-      margin-bottom: 10px;
-    }
-
-    .hero-content p {
-      color: #a5f3fc;
-      font-size: 1.2rem;
-    }
-
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 10px #facc15; }
-      to { box-shadow: 0 0 30px #facc15; }
-    }
-
+    /* SECTIONS */
     section {
-      padding: 40px 20px;
-      max-width: 960px;
+      padding: 50px 20px;
+      max-width: 1100px;
       margin: auto;
     }
+    h2 { text-align: center; font-size: 2.2rem; color: #38bdf8; margin-bottom: 25px; }
 
-    h2 {
-      text-align: center;
-      color: #38bdf8;
-      margin-bottom: 20px;
-      font-size: 2rem;
+    /* GLASS CARD */
+    .glass {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
     }
+    .glass:hover { transform: translateY(-5px); }
 
-    .badges, .links, .projects, .stats, .connect {
-      text-align: center;
-    }
-
-    .badges a, .links a {
-      margin: 8px;
-      display: inline-block;
-    }
-
-    .badges img, .links img {
-      height: 40px;
-    }
-
-    .projects table {
+    /* TABLE */
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      overflow: hidden;
     }
-
-    .projects th, .projects td {
-      border: 1px solid #334155;
-      padding: 10px;
-      color: #e2e8f0;
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+    th { background: rgba(255,255,255,0.08); }
 
-    .stats img {
-      max-width: 48%;
-      margin: 1%;
-    }
-
+    /* FOOTER */
     footer {
-      background: #1e293b;
-      padding: 20px;
       text-align: center;
-      color: #94a3b8;
+      padding: 30px 10px;
       margin-top: 40px;
+      background: #111827;
+      color: #9ca3af;
     }
 
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero img {
-        margin: 0 0 20px;
-      }
-
-      .hero-content {
-        margin-left: 0;
-      }
-
-      .stats img {
-        max-width: 100%;
-        margin-bottom: 15px;
-      }
+      .hero { flex-direction: column; text-align: center; }
+      .hero-content { margin-left: 0; margin-top: 20px; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER SECTION WITH IMAGE LEFT AND TEXT RIGHT -->
+<!-- ---------------- HERO ---------------- -->
 <div class="hero">
   <img src="pi.png" alt="Avanish Image"/>
   <div class="hero-content">
     <h1>👋 Hey, I'm <span style="color:#f87171">Avanish Kumar Jha</span></h1>
-    <p>Android | Kotlin | Multiplatform Developer<br/>
-       Firebase | Jetpack | UI/UX Craftsman</p>
+    <p>Android | Kotlin | ARCore | Multiplatform Developer<br>
+       Firebase | Jetpack Compose | AR Navigation Engineer</p>
   </div>
 </div>
 
+
+<!-- ---------- ABOUT ME ----------- -->
 <section>
   <h2>🎓 About Me</h2>
-  <p>I’m a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong> and currently interning as an Android Developer at <a href="https://graspit.co.in" target="_blank" style="color:#fcd34d;">GraspIt</a>. Passionate about Kotlin, Jetpack, Firebase, and cross-platform with KMP!</p>
-  <p>Member of <strong>PIERC</strong> club organizing hackathons & tech workshops.</p>
+  <div class="glass">
+    <p>
+      I'm a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University</strong>, currently working as an
+      <strong>Android Developer Intern at GraspIt</strong>. I specialize in Kotlin, Jetpack Compose, Firebase, and
+      Augmented Reality (ARCore) development.
+    </p>
+    <p>Member of <strong>PIERC</strong> — organizing hackathons, leading workshops, and mentoring juniors.</p>
+  </div>
 </section>
 
+
+<!-- ------------- RESUME SECTION (NEW) ------------- -->
+<section>
+  <h2>📄 Resume</h2>
+
+  <div class="glass">
+    <h3 style="color:#facc15;">👤 Contact</h3>
+    <p><strong>Phone:</strong> +91 76542 16450</p>
+    <p><strong>Email:</strong> <a style="color:#38bdf8" href="mailto:avnishjha277@gmail.com">avnishjha277@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> Avanish Kumar Jha</p>
+    <p><strong>GitHub:</strong> Kingjha13</p>
+    <p><strong>Portfolio:</strong> This website 😄</p>
+  </div>
+
+  <div class="glass">
+    <h3 style="color:#facc15;">🎓 Education</h3>
+    <p><strong>Parul University, Vadodara (2023–2027)</strong><br>
+       B.Tech in Computer Science Engineering</p>
+  </div>
+
+  <div class="glass">
+    <h3 style="color:#facc15;">💼 Experience</h3>
+
+    <p><strong>Android Developer Intern — GraspIt (Apr 2025 – Present)</strong></p>
+    <ul>
+      <li>Built educational Android app for classes 6–12 with gamified learning.</li>
+      <li>Worked on 3D & AR modules to improve visualization.</li>
+      <li>Integrated Firebase for backend + analytics.</li>
+      <li>Improved UI/UX and app performance.</li>
+    </ul><br>
+
+    <p><strong>AR Application Developer Intern — Parul University (Nov 2025 – Current)</strong></p>
+    <ul>
+      <li>Developing AR-based campus navigation using ARCore.</li>
+      <li>Designed interactive AR wayfinding arrows + info overlays.</li>
+      <li>Optimized for Android devices using Geospatial APIs.</li>
+    </ul>
+  </div>
+
+  <div class="glass">
+    <h3 style="color:#facc15;">📂 Projects</h3>
+
+    <ul>
+      <li><strong>Music Player + Chat App</strong> — Firebase, Kotlin, Compose</li>
+      <li><strong>Shopkeeper Junction</strong> — E-Commerce app for startup</li>
+      <li><strong>Kotlin Compiler</strong> — Custom lightweight compiler (web based)</li>
+      <li><strong>8th Wall AR Portfolio</strong> — WebAR interactive showcase</li>
+    </ul>
+  </div>
+
+  <div class="glass">
+    <h3 style="color:#facc15;">🧠 Skills</h3>
+    <p>
+      <strong>Languages:</strong> C, Java, Kotlin, Python, HTML, CSS<br>
+      <strong>Android:</strong> Jetpack Compose, Firebase, ARCore, Node.js<br>
+      <strong>Tools:</strong> Git, GitHub, Android Studio, IntelliJ IDEA<br>
+      <strong>Core CS:</strong> OOP, DBMS, Networks, OS, DSA
+    </p>
+  </div>
+</section>
+
+
+<!-- -------- Existing Portfolio Sections (Tech Stack, Links, Projects, Stats) -------- -->
 <section class="badges">
   <h2>🛠️ Tech Stack</h2>
-  <a href="#"><img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Jetpack-00C853?style=for-the-badge&logo=android&logoColor=white"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white"/></a>
+  <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
+  <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase">
+  <img src="https://img.shields.io/badge/Jetpack-00C853?style=for-the-badge&logo=android&logoColor=white">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 </section>
 
 <section class="links">
-  <h2>💻 Coding Platforms</h2>
-  <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank">
-    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" />
-  </a>
+  <h2>💻 Coding Profiles</h2>
   <a href="https://leetcode.com/u/2303051050150/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" />
+    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
   </a>
-  <a href="https://www.codechef.com/users/avanish_50" target="_blank">
-    <img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" />
-  </a>
-</section>
-
-<section class="projects">
-  <h2>📂 Projects</h2>
-  <table>
-    <tr>
-      <th>Project</th>
-      <th>Description</th>
-      <th>Link</th>
-    </tr>
-    <tr>
-      <td>Firebase Auth App</td>
-      <td>Seamless user auth with Firebase - Clean UI & secure logic.</td>
-      <td><a href="https://github.com/Kingjha13/Firebase_authonti" target="_blank" style="color:#38bdf8;">GitHub</a></td>
-    </tr>
-    <tr>
-      <td>Animation Demo</td>
-      <td>UI transitions to enhance user experience in Android.</td>
-      <td><a href="https://github.com/Kingjha13/AnimationDemo" target="_blank" style="color:#38bdf8;">GitHub</a></td>
-    </tr>
-  </table>
-</section>
-
-<section class="projects">
-  <h2>🎥 Project Demos</h2>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Instagram Video Link</th>
-    </tr>
-    <tr>
-      <td>Word Game</td>
-      <td><a href="https://www.instagram.com/avanishjha.13/reel/DANSHS3oYxU/" target="_blank" style="color:#4ade80;">Watch here</a></td>
-    </tr>
-    <tr>
-      <td>Music Player & Chat App</td>
-      <td><a href="https://www.linkedin.com/posts/avanish-kumar-jha-129374261_firebase-kotlin-appdevelopment-activity-7308310900069826560-JbMC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFrWVw0B9BGoAalhrXEnWq6inKU1xLtro0g" target="_blank" style="color:#4ade80;">Watch here</a></td>
-    </tr>
-  </table>
-</section>
-
-<section class="stats">
-  <h2>📊 GitHub Stats</h2>
-  <img src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical" alt="GitHub Stats" />
-
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical" alt="Top Languages" />
-
-  <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" alt="GitHub Streak" />
-</section>
-    
-<section class="connect">
-  <h2>🌐 Connect With Me</h2>
-  <a href="https://instagram.com/avanishjha.13" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
-  </a>
-  <a href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="mailto:avnishkumar130603@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank">
+    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white"/>
   </a>
 </section>
 
+
+<!-- -------- FOOTER -------- -->
 <footer>
-  &copy; 2025 Avanish Kumar Jha &bull; Android Developer & Open Source Contributor
+  © 2025 • Avanish Kumar Jha • Android & AR Developer
 </footer>
 
 </body>
