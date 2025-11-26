@@ -1350,37 +1350,37 @@
       <p>Send me your details and why you want to connect. I’ll review and reply if I want to share my number or WhatsApp.</p>
       <!-- TODO: Replace action URL with your Formspree endpoint -->
       <!-- Sign up at https://formspree.io/ to get a form endpoint like /f/abcdabcd -->
-      <form id="contactRequestForm" action="https://formspree.io/f/yourFormIdHere" method="POST">
-        <div class="form-group">
-          <label for="name">Your Name*</label>
-          <input type="text" id="name" name="name" required>
-        </div>
+     <form id="contactRequestForm">
+  <div class="form-group">
+    <label for="name">Your Name*</label>
+    <input type="text" id="name" name="name" required>
+  </div>
 
-        <div class="form-group">
-          <label for="email">Your Email*</label>
-          <input type="email" id="email" name="email" required>
-        </div>
+  <div class="form-group">
+    <label for="email">Your Email*</label>
+    <input type="email" id="email" name="email" required>
+  </div>
 
-        <div class="form-group">
-          <label for="phone">Your Phone / WhatsApp (optional)</label>
-          <input type="text" id="phone" name="phone">
-        </div>
+  <div class="form-group">
+    <label for="phone">Your Phone / WhatsApp (optional)</label>
+    <input type="text" id="phone" name="phone">
+  </div>
 
-        <div class="form-group">
-          <label for="subject">Subject*</label>
-          <input type="text" id="subject" name="subject" required>
-        </div>
+  <div class="form-group">
+    <label for="subject">Subject*</label>
+    <input type="text" id="subject" name="subject" required>
+  </div>
 
-        <div class="form-group">
-          <label for="message">Message*</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
+  <div class="form-group">
+    <label for="message">Message*</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
 
-        <div class="form-footer">
-          <small>You'll receive my contact only if I approve your request.</small>
-          <button class="btn-submit" type="submit">Send Request</button>
-        </div>
-      </form>
+  <div class="form-footer">
+    <small>You'll receive my contact only if I approve your request.</small>
+    <button class="btn-submit" type="submit">Send Request</button>
+  </div>
+</form>
     </div>
   </div>
 </div>
@@ -1390,6 +1390,7 @@
 </footer>
 
 <script>
+  // if you already have these, keep your versions
   function openContactModal() {
     document.getElementById('contactModal').classList.add('active');
   }
@@ -1398,26 +1399,53 @@
     document.getElementById('contactModal').classList.remove('active');
   }
 
-  // Close modal on outside click
+  // Close modal on outside click (optional, if already added then no need duplicate)
   document.addEventListener('click', function (e) {
     const overlay = document.getElementById('contactModal');
-    if (!overlay.classList.contains('active')) return;
+    if (!overlay || !overlay.classList.contains('active')) return;
     const content = overlay.querySelector('.modal-content');
     if (!content.contains(e.target) && e.target !== content) {
       closeContactModal();
     }
   });
 
-  // Optional: show simple alert after submit (works with Formspree redirect)
-  const form = document.getElementById('contactRequestForm');
-  if (form) {
-    form.addEventListener('submit', function () {
-      setTimeout(function () {
-        alert('Request sent. I will review and contact you if I decide to share my number.');
-      }, 100);
+  // ✅ Mailto-based submit (no backend, no keys)
+  const contactForm = document.getElementById('contactRequestForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Subject line of the email you receive
+      const mailSubject = `Contact request from ${name} - ${subject}`;
+
+      // Body of the email you receive
+      const mailBody =
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone / WhatsApp: ${phone || 'Not provided'}\n\n` +
+        `Message:\n${message}`;
+
+      // Build the mailto URL
+      const mailToLink =
+        `mailto:avnishjha277@gmail.com` +
+        `?subject=${encodeURIComponent(mailSubject)}` +
+        `&body=${encodeURIComponent(mailBody)}`;
+
+      // Open user's email client
+      window.location.href = mailToLink;
+
+      // Optionally close modal
+      closeContactModal();
     });
   }
 </script>
+
 
 </body>
 </html>
