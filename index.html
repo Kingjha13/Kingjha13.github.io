@@ -448,13 +448,739 @@
 </html>
  -->
 
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Avanish Kumar Jha | Android & AR Developer Portfolio</title> <!-- Fonts --> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet"> <style> * { margin: 0; padding: 0; box-sizing: border-box; } :root { --bg: #020617; --bg-soft: #0b1220; --accent: #38bdf8; --accent-soft: rgba(56,189,248,0.15); --accent-strong: #f97316; --text-main: #e5e7eb; --text-soft: #9ca3af; --border-soft: rgba(148,163,184,0.35); --radius-lg: 18px; --radius-md: 12px; --shadow-soft: 0 18px 45px rgba(15,23,42,0.9); } body { font-family: 'Poppins', sans-serif; background: radial-gradient(circle at top, #1e293b 0, #020617 40%, #000 100%); color: var(--text-main); line-height: 1.7; scroll-behavior: smooth; } a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; } /* NAVBAR */ .navbar { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: linear-gradient(90deg, rgba(15,23,42,0.9), rgba(15,23,42,0.4)); border-bottom: 1px solid rgba(148,163,184,0.25); } .nav-inner { max-width: 1100px; margin: 0 auto; padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; } .nav-logo { font-family: 'Fira Code', monospace; font-size: 0.95rem; color: var(--accent); } .nav-links a { margin-left: 18px; font-size: 0.9rem; color: var(--text-soft); } .nav-links a:hover { color: var(--accent); } /* CONTACT STRIP (TOP) */ .top-contact { background: #020617; border-bottom: 1px solid rgba(148,163,184,0.25); font-size: 0.85rem; } .top-contact-inner { max-width: 1100px; margin: 0 auto; padding: 6px 18px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; color: var(--text-soft); } .pill-link, .pill-button { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(15,23,42,0.9); border: 1px solid rgba(148,163,184,0.4); font-size: 0.78rem; text-decoration: none; color: var(--text-soft); cursor: pointer; } .pill-link span.icon, .pill-button span.icon { font-size: 0.9rem; } .pill-link:hover, .pill-button:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; } /* HERO */ .hero { max-width: 1100px; margin: 0 auto; padding: 60px 18px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; } .hero-left { position: relative; } .hero-img { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(248,250,252,0.38); box-shadow: 0 0 0 8px rgba(15,23,42,0.95), 0 30px 70px rgba(15,23,42,1), 0 0 60px rgba(56,189,248,0.4); animation: glow 2.3s ease-in-out infinite alternate; } .hero-badge { position: absolute; bottom: 10px; right: -10px; padding: 8px 12px; border-radius: 999px; background: radial-gradient(circle at top left, #22c55e, #16a34a, #0f766e); font-size: 0.75rem; display: flex; align-items: center; gap: 6px; color: #ecfdf5; box-shadow: 0 12px 30px rgba(22,163,74,0.7); } .hero-right { max-width: 520px; } .hero-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(15,23,42,0.85); border: 1px solid rgba(148,163,184,0.45); font-size: 0.78rem; color: var(--text-soft); margin-bottom: 10px; } .hero-title { font-size: 2.4rem; font-weight: 600; margin-bottom: 8px; } .hero-title span { color: #f97316; } .hero-subtitle { color: #a5f3fc; font-size: 1.02rem; margin-bottom: 14px; } .hero-desc { color: var(--text-soft); font-size: 0.95rem; margin-bottom: 22px; } .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; } .btn-primary, .btn-ghost { padding: 9px 16px; font-size: 0.9rem; border-radius: 999px; border: 1px solid transparent; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; } .btn-github {
-    background: #181717;
-    color: white;
-    border: 1px solid #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Avanish Kumar Jha | Android & AR Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* === CSS VARIABLES & RESET === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #020617;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.4);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-.btn-github:hover {
-    background: #24292e;
-}.btn-primary { background: linear-gradient(120deg,#38bdf8,#6366f1); color: #0b1120; font-weight: 500; box-shadow: 0 15px 35px rgba(56,189,248,0.4); } .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); } .btn-ghost { background: rgba(15,23,42,0.9); border-color: rgba(148,163,184,0.6); color: var(--text-soft); } .btn-ghost:hover { border-color: var(--accent); color: var(--accent); } @keyframes glow { from { box-shadow: 0 0 0 8px rgba(15,23,42,0.95), 0 20px 50px rgba(15,23,42,1), 0 0 30px rgba(56,189,248,0.35); } to { box-shadow: 0 0 0 8px rgba(15,23,42,0.95), 0 30px 80px rgba(15,23,42,1), 0 0 80px rgba(56,189,248,0.7); } } /* SECTIONS */ section { max-width: 1100px; margin: 0 auto; padding: 20px 18px 40px; } .section-title { font-size: 1.8rem; margin-bottom: 24px; text-align: left; display: flex; align-items: center; gap: 10px; } .section-title span.icon { font-size: 1.4rem; } /* GLASS CARD */ .glass { background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.7)); border-radius: var(--radius-lg); border: 1px solid var(--border-soft); padding: 20px 18px; box-shadow: var(--shadow-soft); backdrop-filter: blur(18px); margin-bottom: 18px; transition: transform 0.15s ease-out, border-color 0.15s ease-out; } .glass:hover { transform: translateY(-4px); border-color: var(--accent); } .muted { color: var(--text-soft); font-size: 0.92rem; } /* GRID */ .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; } .pill { display: inline-flex; align-items: center; justify-content: center; padding: 5px 10px; font-size: 0.8rem; border-radius: 999px; border: 1px solid rgba(148,163,184,0.5); background: rgba(15,23,42,0.9); color: var(--text-soft); margin: 3px; } /* PROJECTS */ .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 18px; } .project-card { border-radius: var(--radius-md); border: 1px solid rgba(148,163,184,0.35); padding: 16px 15px; background: radial-gradient(circle at top, rgba(56,189,248,0.09), rgba(15,23,42,0.98)); box-shadow: 0 18px 45px rgba(15,23,42,0.9); display: flex; flex-direction: column; justify-content: space-between; } .project-title { font-size: 1.02rem; margin-bottom: 4px; color: #e5e7eb; } .project-meta { font-size: 0.8rem; color: var(--accent-soft); margin-bottom: 8px; font-family: "Fira Code", monospace; } .project-desc { font-size: 0.86rem; color: var(--text-soft); margin-bottom: 10px; } .project-links a { font-size: 0.8rem; margin-right: 10px; text-decoration: none; } .project-links a:hover { text-decoration: underline; } /* TECH STACK BADGES */ .badge-row img { margin: 5px; height: 38px; } /* STATS */ .stats-outer { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; } .stats-outer img { max-width: 100%; border-radius: 12px; border: 1px solid rgba(148,163,184,0.3); } /* CODING LINKS & CONNECT */ .centered { text-align: center; } .social-badges img { margin: 6px; height: 40px; } /* MODAL */ .modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.85); display: none; align-items: center; justify-content: center; z-index: 50; } .modal-overlay.active { display: flex; } .modal-content { max-width: 420px; width: 92%; background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(15,23,42,0.92)); border-radius: 18px; border: 1px solid rgba(148,163,184,0.6); padding: 20px 18px 18px; box-shadow: 0 25px 60px rgba(0,0,0,0.85); } .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; } .modal-title { font-size: 1.2rem; } .modal-close { background: none; border: none; color: var(--text-soft); font-size: 1.2rem; cursor: pointer; } .modal-close:hover { color: #f97316; } .modal-body p { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 10px; } .form-group { margin-bottom: 10px; text-align: left; } .form-group label { display: block; font-size: 0.8rem; margin-bottom: 4px; color: var(--text-main); } .form-group input, .form-group textarea { width: 100%; border-radius: 10px; border: 1px solid rgba(148,163,184,0.7); background: rgba(15,23,42,0.95); padding: 7px 9px; font-size: 0.85rem; color: var(--text-main); outline: none; } .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); } .form-group textarea { resize: vertical; min-height: 70px; } .form-footer { margin-top: 8px; display: flex; justify-content: flex-end; gap: 8px; align-items: center; } .form-footer small { font-size: 0.7rem; color: var(--text-soft); flex: 1; } .btn-submit { padding: 7px 14px; border-radius: 999px; border: none; font-size: 0.85rem; cursor: pointer; background: linear-gradient(120deg,#22c55e,#16a34a); color: #022c22; font-weight: 500; } .btn-submit:hover { filter: brightness(1.05); } /* FOOTER */ footer { margin-top: 30px; background: #020617; border-top: 1px solid rgba(148,163,184,0.25); text-align: center; padding: 18px 10px 24px; color: var(--text-soft); font-size: 0.86rem; } /* RESPONSIVE */ @media (max-width: 820px) { .hero { flex-direction: column; align-items: flex-start; } .hero { align-items: center; } .hero-right { max-width: 100%; } .grid-2 { grid-template-columns: 1fr; } .nav-links { display: none; } .hero-img { width: 260px; height: 260px; } } @media (max-width: 480px) { .hero-title { font-size: 2rem; } } </style> </head> <body> <!-- TOP CONTACT STRIP (NO DIRECT NUMBER) --> <div class="top-contact"> <div class="top-contact-inner"> <span>🔒 Phone number hidden for privacy</span> <span>•</span> <button class="pill-button" type="button" onclick="openContactModal()"> <span class="icon">📨</span><span>Request Contact</span> </button> <a class="pill-link" href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank"> <span class="icon">💼</span><span>LinkedIn</span> </a> <a class="pill-link" href="https://github.com/Kingjha13" target="_blank"> <span class="icon">🐙</span><span>GitHub</span> </a> </div> </div> <!-- NAVBAR --> <div class="navbar"> <div class="nav-inner"> <div class="nav-logo">&lt;Avanish /&gt;</div> <div class="nav-links"> <a href="#about">About</a> <a href="#experience">Experience</a> <a href="#projects">Projects</a> <a href="#skills">Skills</a> <a href="#coding">Coding</a> <a href="#contact">Contact</a> </div> </div> </div> <!-- HERO --> <section id="hero" class="hero"> <div class="hero-left"> <img src="jhapic.jpeg" alt="Avanish Image" class="hero-img"/> <div class="hero-badge"> 🚀 Android & AR Dev </div> </div> <div class="hero-right"> <div class="hero-tag"> <span>🎓 3rd Year CSE • Parul University</span> </div> <h1 class="hero-title">Hey, I'm <span>Avanish Kumar Jha</span></h1> <p class="hero-subtitle"> Android • Kotlin • Jetpack Compose • Firebase • ARCore • KMP </p> <p class="hero-desc"> I build clean, modern Android apps and AR experiences — from educational apps and e-commerce to campus AR navigation. Focused on performance, great UI/UX, and real-world impact. </p> <div class="hero-actions"> <a href="#projects" class="btn-primary">View Projects</a> <a href="#contact" class="btn-ghost">Let’s Connect</a> <a href="https://github.com/Kingjha13" target="_blank" class="btn-github">GitHub</a> </div> </div> </section> <!-- ABOUT --> <section id="about"> <h2 class="section-title"><span class="icon">🎓</span>About Me</h2> <div class="glass"> <p class="muted"> I'm a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University, Vadodara</strong>. I was a <strong>Android Developer Intern at GraspIt.</strong> Currently, I am an <strong>AR Application Developer Intern at Parul University</strong> where I work on an AR-based campus navigation system using ARCore. </p> <br/> <p class="muted"> I love working with <strong>Kotlin, Jetpack Compose, Firebase, and ARCore</strong>. I'm also an active member and University Innovation Ambassador at <strong>PIERC</strong>, where I help organize hackathons & workshops and mentor juniors in Android development. </p> </div> </section> <!-- EXPERIENCE --> <section id="experience"> <h2 class="section-title"><span class="icon">💼</span>Experience</h2> <div class="grid-2"> <div class="glass"> <h3>Android Developer Intern – GraspIt</h3> <p class="muted">Vadodara, India • Apr 2025 – Sept 2025</p> <ul class="muted"> <li>Developed an educational Android app for classes 6–12 with gamified and interactive learning.</li> <li>Built 3D and AR modules to improve topic visualization and student engagement.</li> <li>Integrated Firebase for authentication, backend services, and analytics.</li> <li>Improved UI/UX and app performance for smoother learning flows.</li> </ul> </div> <div class="glass"> <h3>AR Application Developer Intern – Parul University</h3> <p class="muted">Vadodara, India • Nov 2025 – Present</p> <ul class="muted"> <li>Building an AR-based campus navigation guide using ARCore for students and visitors.</li> <li>Implementing AR wayfinding arrows and interactive building info overlays.</li> <li>Optimizing location-based AR experiences for Android devices.</li> </ul> </div> </div> </section> <!-- PROJECTS --> <section id="projects"> <h2 class="section-title"><span class="icon">📂</span>Projects</h2> <div class="projects-grid"> <div class="project-card"> <div> <div class="project-title">Music Player & Chat App</div> <div class="project-meta">Kotlin • Jetpack Compose • Firebase</div> <p class="project-desc"> Combined music streaming and real-time chat in one Android app using Firebase Firestore & Realtime DB — including user presence, message status, and modern Compose UI. </p> </div> <div class="project-links"> <a href="https://www.linkedin.com/posts/avanish-kumar-jha-129374261_firebase-kotlin-appdevelopment-activity-7308310900069826560-JbMC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFrWVw0B9BGoAalhrXEnWq6inKU1xLtro0g" target="_blank">🎥 Demo</a> </div> </div> <div class="project-card"> <div> <div class="project-title">Shopkeeper Junction (E-Commerce)</div> <div class="project-meta">Android • Jetpack Compose</div> <p class="project-desc"> E-commerce Android app designed for small businesses as part of Startup PIERC. Built modular UI screens and smooth shopping flows using Compose. </p> </div> </div> <div class="project-card"> <div> <div class="project-title">Kotlin Compiler (Web)</div> <div class="project-meta">Kotlin • Web • Personal Project</div> <p class="project-desc"> Building a basic web-based Kotlin compiler capable of handling simple print statements — exploring language internals and compilation flow. </p> </div> </div> <div class="project-card"> <div> <div class="project-title">AR Campus Navigation</div> <div class="project-meta">ARCore • Android • Geospatial</div> <p class="project-desc"> AR navigation guide for campus that uses ARCore and location-based anchors to help users find buildings and facilities using AR arrows and overlays. </p> </div> </div> <div class="project-card"> <div> <div class="project-title">8th Wall WebAR Portfolio</div> <div class="project-meta">JavaScript • A-Frame • 8th Wall</div> <p class="project-desc"> Interactive WebAR experiences demonstrating AR skills directly in the browser, showing 3D content and interactions without installing apps. </p> </div> <div class="project-links"> <a href="https://www.8thwall.com/avnishjha/" target="_blank" style="font-size:0.85rem; color:#38bdf8;"> 🔗 View WebAR Project </a> </div> </div> <div class="project-card"> <div> <div class="project-title">Firebase Auth App</div> <div class="project-meta">Kotlin • Firebase Auth</div> <p class="project-desc"> Firebase-based authentication app with clean UI and secure login/register flows. </p> </div> <div class="project-links"> <a href="https://github.com/Kingjha13/Firebase_authonti" target="_blank">🔗 GitHub</a> </div> </div> <div class="project-card"> <div> <div class="project-title">Chat App</div> <div class="project-meta">Android • UI/UX</div> <p class="project-desc"> Collection of smooth UI transitions and animations to enhance user experience in Android apps. </p> </div> <div class="project-links"> <a href="https://github.com/Kingjha13/chatApp" target="_blank">🔗 GitHub</a> </div> </div> <div class="project-card"> <div> <div class="project-title">Word Game</div> <div class="project-meta">Android • Game</div> <p class="project-desc"> Simple word game focusing on user interaction and fun UI. </p> </div> <div class="project-links"> <a href="https://www.instagram.com/avanishjha.13/reel/DANSHS3oYxU/" target="_blank">🎥 Instagram Demo</a> </div> </div> </div> </section> <!-- SKILLS --> <section id="skills"> <h2 class="section-title"><span class="icon">🧠</span>Skills</h2> <div class="glass"> <p><strong>Languages</strong></p> <div> <span class="pill">C</span> <span class="pill">Java</span> <span class="pill">Kotlin</span> <span class="pill">Python</span> <span class="pill">HTML</span> <span class="pill">CSS</span> </div> <br/> <p><strong>Android & AR</strong></p> <div> <span class="pill">Android Studio</span> <span class="pill">Jetpack Compose</span> <span class="pill">Firebase (Auth, Firestore, Realtime DB)</span> <span class="pill">ARCore</span> <span class="pill">Kotlin Multiplatform (KMP)</span> <span class="pill">Node.js (backend basics)</span> </div> <br/> <p><strong>Tools & Fundamentals</strong></p> <div> <span class="pill">Git</span> <span class="pill">GitHub</span> <span class="pill">IntelliJ IDEA</span> <span class="pill">Computer Networks</span> <span class="pill">DBMS</span> <span class="pill">Operating Systems</span> <span class="pill">OOP</span> <span class="pill">DSA Basics</span> </div> </div> <div class="glass centered"> <p class="muted"><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Computer Networks, Android Basics with Jetpack Compose (Google Developers)</p> </div> <div class="glass centered"> <p class="muted"> <strong>Leadership & Contributions:</strong> University Innovation Ambassador at <strong>PIERC</strong>, organized hackathons & workshops, and contributing to Kotlin-based Android tools & UI utilities on GitHub. </p> </div> </section> <!-- TECH STACK BADGES --> <section> <h2 class="section-title"><span class="icon">🛠️</span>Tech Stack</h2> <div class="glass centered badge-row"> <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/> <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase" alt="Firebase"/> <img src="https://img.shields.io/badge/Jetpack-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Jetpack"/> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/> <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white" alt="Android Studio"/> </div> </section> <!-- CODING PLATFORMS --> <section id="coding"> <h2 class="section-title"><span class="icon">💻</span>Coding Platforms</h2> <div class="glass centered social-badges"> <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank"> <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank"/> </a> <a href="https://leetcode.com/u/2303051050150/" target="_blank"> <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/> </a> <a href="https://www.codechef.com/users/avanish_50" target="_blank"> <img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef"/> </a> </div> </section> <!-- GITHUB STATS --> <section> <h2 class="section-title"><span class="icon">📊</span>GitHub Stats</h2> <div class="glass stats-outer"> <img src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical" alt="GitHub Stats" /> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical" alt="Top Languages" /> <img src="https://streak-stats.demolab.com/?user=Kingjha13&theme=radical" alt="GitHub Streak" /> </div> </section> <!-- CONTACT / CONNECT --> <section id="contact"> <h2 class="section-title"><span class="icon">🌐</span>Connect With Me</h2> <div class="glass centered social-badges"> <a href="https://instagram.com/avanishjha.13" target="_blank"> <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/> </a> <a href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/> </a> <a href="mailto:avnishkumar130603@gmail.com" target="_blank"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/> </a> </div> </section> <!-- CONTACT REQUEST MODAL --> <div id="contactModal" class="modal-overlay"> <div class="modal-content"> <div class="modal-header"> <div class="modal-title">Request Contact</div> <button class="modal-close" type="button" onclick="closeContactModal()">✖</button> </div> <div class="modal-body"> <p>Send me your details and why you want to connect. I’ll review and reply if I want to share my number or WhatsApp.</p> <!-- TODO: Replace action URL with your Formspree endpoint --> <!-- Sign up at https://formspree.io/ to get a form endpoint like /f/abcdabcd --> <form id="contactRequestForm"> <div class="form-group"> <label for="name">Your Name*</label> <input type="text" id="name" name="name" required> </div> <div class="form-group"> <label for="email">Your Email*</label> <input type="email" id="email" name="email" required> </div> <div class="form-group"> <label for="phone">Your Phone / WhatsApp (optional)</label> <input type="text" id="phone" name="phone"> </div> <div class="form-group"> <label for="subject">Subject*</label> <input type="text" id="subject" name="subject" required> </div> <div class="form-group"> <label for="message">Message*</label> <textarea id="message" name="message" required></textarea> </div> <div class="form-footer"> <small>You'll receive my contact only if I approve your request.</small> <button class="btn-submit" type="submit">Send Request</button> </div> </form> </div> </div> </div> <footer> © 2025 • Avanish Kumar Jha • Android & AR Developer • Phone shared only on approved requests ⚡ </footer> <script> // if you already have these, keep your versions function openContactModal() { document.getElementById('contactModal').classList.add('active'); } function closeContactModal() { document.getElementById('contactModal').classList.remove('active'); } // Close modal on outside click (optional, if already added then no need duplicate) document.addEventListener('click', function (e) { const overlay = document.getElementById('contactModal'); if (!overlay || !overlay.classList.contains('active')) return; const content = overlay.querySelector('.modal-content'); if (!content.contains(e.target) && e.target !== content) { closeContactModal(); } }); // ✅ Mailto-based submit (no backend, no keys) const contactForm = document.getElementById('contactRequestForm'); if (contactForm) { contactForm.addEventListener('submit', function (e) { e.preventDefault(); const name = document.getElementById('name').value.trim(); const email = document.getElementById('email').value.trim(); const phone = document.getElementById('phone').value.trim(); const subject = document.getElementById('subject').value.trim(); const message = document.getElementById('message').value.trim(); // Subject line of the email you receive const mailSubject = Contact request from ${name} - ${subject}; // Body of the email you receive const mailBody = Name: ${name}\n + Email: ${email}\n + Phone / WhatsApp: ${phone || 'Not provided'}\n\n + Message:\n${message}; // Build the mailto URL const mailToLink = mailto:avnishjha277@gmail.com + ?subject=${encodeURIComponent(mailSubject)} + &body=${encodeURIComponent(mailBody)}; // Open user's email client window.location.href = mailToLink; // Optionally close modal closeContactModal(); }); } </script> </body> </html>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.04), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.04), transparent 25%);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
+        a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+        a:hover { color: var(--secondary); }
+
+        /* === TOP BAR & NAVBAR === */
+        .top-contact {
+            background: rgba(2, 6, 23, 0.95);
+            font-size: 0.85rem;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .top-contact-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+        .pill-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .pill-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .nav-links a:hover { color: var(--text-main); }
+
+        /* === LAYOUT & GLASSMORPHISM === */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-main);
+        }
+        .glass-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-glass);
+            padding: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        .glass-panel:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+        .hero-left {
+            position: relative;
+            flex-shrink: 0;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-glass);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+        }
+        .hero-badge {
+            position: absolute;
+            bottom: 20px;
+            right: -10px;
+            padding: 10px 16px;
+            border-radius: 99px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(8px);
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .hero-right { max-width: 600px; }
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 99px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        .hero-title span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 99px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 15px 25px rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-glass);
+            color: var(--text-main);
+        }
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* === EXPERIENCE GRID === */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .exp-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .exp-card .date {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .exp-card ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .exp-card ul li { margin-bottom: 8px; }
+
+        /* === PROJECTS GRID === */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 24px;
+        }
+        .project-header { margin-bottom: 15px; }
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+        .project-tech {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+        .project-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .project-links a:hover { text-decoration: underline; }
+
+        /* === SKILLS === */
+        .skills-container { margin-bottom: 20px; }
+        .skills-category {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .pills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .skill-pill {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        .skill-pill:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* === BADGES & STATS === */
+        .flex-center {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .badge-img { height: 40px; border-radius: 6px; transition: var(--transition); }
+        .badge-img:hover { transform: scale(1.05); }
+        .stats-img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border-glass);
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 60px;
+            background: rgba(2, 6, 23, 0.8);
+        }
+
+        /* === MODAL === */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 450px;
+            padding: 30px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .modal-title { font-size: 1.3rem; font-weight: 600; }
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .close-btn:hover { color: #ef4444; }
+
+        .form-group { margin-bottom: 16px; }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.02);
+        }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+
+        /* === ANIMATIONS === */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 850px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 60px; }
+            .hero-right { display: flex; flex-direction: column; align-items: center; }
+            .hero-actions { justify-content: center; }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.4rem; }
+        }
+        @media (max-width: 500px) {
+            .hero-img { width: 240px; height: 240px; }
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.6rem; }
+            .glass-panel { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-contact">
+        <div class="top-contact-inner">
+            <span>🔒 Phone hidden for privacy</span>
+            <span style="color: var(--border-glass);">|</span>
+            <button class="pill-btn" type="button" onclick="openContactModal()">
+                <span>📨</span> Request Contact
+            </button>
+            <a class="pill-btn" href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank">
+                <span>💼</span> LinkedIn
+            </a>
+            <a class="pill-btn" href="https://github.com/Kingjha13" target="_blank">
+                <span>🐙</span> GitHub
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo">&lt;Avanish /&gt;</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-left">
+            <img src="jhapic.jpeg" alt="Avanish Image" class="hero-img"/>
+            <div class="hero-badge">🚀 Android & AR Dev</div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-tag">🎓 3rd Year CSE • Parul University</div>
+            <h1 class="hero-title">Hey, I'm <span>Avanish Kumar Jha</span></h1>
+            <p class="hero-subtitle">Android • Kotlin • Jetpack Compose • Firebase • ARCore</p>
+            <p class="project-desc" style="font-size: 1.05rem; margin-bottom: 30px;">
+                I build clean, modern Android apps and AR experiences — from educational platforms and e-commerce to campus AR navigation. Focused on performance, great UI/UX, and real-world impact.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <button onclick="openContactModal()" class="btn btn-outline">Let’s Connect</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title"><span>🎓</span> About Me</h2>
+        <div class="glass-panel">
+            <p style="margin-bottom: 15px; color: var(--text-muted);">
+                I'm a 3rd-year <strong>B.Tech CSE</strong> student at <strong>Parul University, Vadodara</strong>. I was an <strong>Android Developer Intern at GraspIt</strong> and currently, I am an <strong>AR Application Developer Intern at Parul University</strong> working on an AR-based campus navigation system using ARCore.
+            </p>
+            <p style="color: var(--text-muted);">
+                I love working with <strong>Kotlin, Jetpack Compose, Firebase, and ARCore</strong>. I'm also an active member and University Innovation Ambassador at <strong>PIERC</strong>, where I help organize hackathons & workshops and mentor juniors in Android development.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title"><span>💼</span> Experience</h2>
+        <div class="grid-2">
+            <div class="glass-panel exp-card">
+                <h3>AR Application Developer Intern</h3>
+                <div class="date">Parul University | Nov 2025 – Present</div>
+                <ul>
+                    <li>Building an AR-based campus navigation guide using ARCore for students and visitors.</li>
+                    <li>Implementing AR wayfinding arrows and interactive building info overlays.</li>
+                    <li>Optimizing location-based AR experiences for Android devices.</li>
+                </ul>
+            </div>
+            <div class="glass-panel exp-card">
+                <h3>Android Developer Intern</h3>
+                <div class="date">GraspIt | Apr 2025 – Sept 2025</div>
+                <ul>
+                    <li>Developed an educational Android app for classes 6–12 with gamified learning.</li>
+                    <li>Built 3D and AR modules to improve topic visualization.</li>
+                    <li>Integrated Firebase for authentication, backend services, and analytics.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title"><span>📂</span> Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="glass-panel project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Music Player & Chat App</h3>
+                    <div class="project-tech"><span>Kotlin</span><span>Compose</span><span>Firebase</span></div>
+                    <p class="project-desc">Combined music streaming and real-time chat in one Android app using Firebase Firestore & Realtime DB, featuring modern Compose UI.</p>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/posts/avanish-kumar-jha-129374261_firebase-kotlin-appdevelopment-activity-7308310900069826560-JbMC" target="_blank">🔗 Demo</a>
+                </div>
+            </div>
+
+            <div class="glass-panel project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Shopkeeper Junction</h3>
+                    <div class="project-tech"><span>Android</span><span>Compose</span><span>E-Commerce</span></div>
+                    <p class="project-desc">E-commerce Android app designed for small businesses as part of Startup PIERC. Built modular UI screens and smooth shopping flows.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel project-card">
+                <div class="project-header">
+                    <h3 class="project-title">AR Campus Navigation</h3>
+                    <div class="project-tech"><span>ARCore</span><span>Android</span><span>Geospatial</span></div>
+                    <p class="project-desc">AR navigation guide that uses ARCore and location-based anchors to help users find buildings using AR arrows and overlays.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel project-card">
+                <div class="project-header">
+                    <h3 class="project-title">8th Wall WebAR Portfolio</h3>
+                    <div class="project-tech"><span>JavaScript</span><span>A-Frame</span><span>WebAR</span></div>
+                    <p class="project-desc">Interactive WebAR experiences demonstrating 3D content and interactions directly in the browser without installing apps.</p>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.8thwall.com/avnishjha/" target="_blank">🔗 View WebAR</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title"><span>🧠</span> Skills & Tech Stack</h2>
+        <div class="glass-panel">
+            <div class="skills-container">
+                <div class="skills-category">Languages</div>
+                <div class="pills-wrapper">
+                    <span class="skill-pill">Kotlin</span>
+                    <span class="skill-pill">Java</span>
+                    <span class="skill-pill">C</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">HTML/CSS</span>
+                </div>
+
+                <div class="skills-category">Android & AR</div>
+                <div class="pills-wrapper">
+                    <span class="skill-pill">Android Studio</span>
+                    <span class="skill-pill">Jetpack Compose</span>
+                    <span class="skill-pill">Firebase</span>
+                    <span class="skill-pill">ARCore</span>
+                    <span class="skill-pill">KMP</span>
+                </div>
+
+                <div class="skills-category">Tools & Fundamentals</div>
+                <div class="pills-wrapper" style="margin-bottom: 0;">
+                    <span class="skill-pill">Git & GitHub</span>
+                    <span class="skill-pill">IntelliJ IDEA</span>
+                    <span class="skill-pill">DSA</span>
+                    <span class="skill-pill">OOP</span>
+                    <span class="skill-pill">DBMS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-center" style="margin-top: 30px;">
+            <img class="badge-img" src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/>
+            <img class="badge-img" src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android"/>
+            <img class="badge-img" src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=firebase" alt="Firebase"/>
+            <img class="badge-img" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title"><span>📊</span> Stats & Profiles</h2>
+        <div class="flex-center" style="margin-bottom: 30px;">
+            <a href="https://leetcode.com/u/2303051050150/" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
+            <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank"/></a>
+            <a href="https://www.codechef.com/users/avanish_50" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef"/></a>
+        </div>
+        
+        <div class="flex-center">
+            <img class="stats-img" src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical&bg_color=0f172a&border_color=334155" alt="GitHub Stats" />
+            <img class="stats-img" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical&bg_color=0f172a&border_color=334155" alt="Top Languages" />
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 • Avanish Kumar Jha • Android & AR Developer</p>
+        <p style="margin-top: 8px;">
+            <a href="mailto:avnishkumar130603@gmail.com">Email Me</a> | 
+            <a href="https://in.linkedin.com/in/avanish-kumar-jha-129374261" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
+    <div id="contactModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Request Contact</h3>
+                <button class="close-btn" onclick="closeContactModal()">&times;</button>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
+                Send me your details. I’ll review and reply if I want to share my number or WhatsApp.
+            </p>
+            <form id="contactRequestForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone / WhatsApp (optional)</label>
+                    <input type="text" id="phone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                    <button class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">Send via Email</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('contactModal');
+
+        function openContactModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeContactModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal if user clicks outside the modal content box
+        function handleOverlayClick(event) {
+            if (event.target === modal) {
+                closeContactModal();
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('contactRequestForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const mailSubject = `Portfolio Contact Request from ${name}`;
+            const mailBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\n\nMessage:\n${message}`;
+
+            // Trigger default email client
+            window.location.href = `mailto:avnishjha277@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+            
+            closeContactModal();
+            this.reset(); // Clear the form
+        });
+    </script>
+
+</body>
+</html>
