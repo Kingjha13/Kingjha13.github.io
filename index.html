@@ -1087,36 +1087,50 @@
         </div>
     </section>
 
-    <section>
-        <h2 class="section-title"><span>📊</span> Stats & Profiles</h2>
-        <div class="flex-center" style="margin-bottom: 30px;">
-            <a href="https://leetcode.com/u/2303051050150/" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
-            <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank"/></a>
-            <a href="https://www.codechef.com/users/avanish_50" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef"/></a>
-        </div>
-        
-        <div class="glass-panel" style="text-align: center; margin-bottom: 20px; padding: 15px;">
-            <img src="https://github-profile-trophy.vercel.app/?username=Kingjha13&theme=radical&no-bg=true&margin-w=15" alt="Trophies" style="max-width: 100%;" />
-        </div>
+   <section style="max-width: 100%; overflow-x: hidden; padding: 10px;">
+    <h2 class="section-title"><span>📊</span> Stats & Profiles</h2>
+    
+    <!-- Badges Container -->
+    <div class="flex-center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
+        <a href="https://leetcode.com/u/2303051050150/" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" style="max-width: 100%;"/></a>
+        <a href="https://www.hackerrank.com/profile/avnishjha277" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank" style="max-width: 100%;"/></a>
+        <a href="https://www.codechef.com/users/avanish_50" target="_blank"><img class="badge-img" src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" style="max-width: 100%;"/></a>
+    </div>
+    
+    <!-- Trophies -->
+    <div class="glass-panel" style="text-align: center; margin-bottom: 20px; padding: 15px; overflow-x: auto;">
+        <img src="https://github-profile-trophy.vercel.app/?username=Kingjha13&theme=radical&no-bg=true&margin-w=15" alt="Trophies" style="width: 100%; min-width: 300px; height: auto;" />
+    </div>
 
-        <div class="stats-grid">
-            <div class="glass-panel">
-                <img class="stats-img" src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical&bg_color=0f172a&border_color=334155&title_color=38bdf8&text_color=94a3b8" alt="GitHub Stats" />
-            </div>
-            <div class="glass-panel">
-                <img class="stats-img" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical&bg_color=0f172a&border_color=334155&title_color=38bdf8&text_color=94a3b8" alt="Top Languages" />
-            </div>
+    <!-- Responsive Grid for Stats Cards -->
+    <div class="stats-grid" style="display: flex; flex-direction: column; gap: 20px;">
+        <style>
+            /* Tablet/Desktop Grid Logic */
+            @media (min-width: 768px) {
+                .stats-grid { flex-direction: row !important; }
+                .stats-grid .glass-panel { flex: 1; }
+            }
+        </style>
+        <div class="glass-panel" style="padding: 10px; text-align: center;">
+            <img class="stats-img" style="width: 100%; height: auto;" src="https://github-readme-stats.vercel.app/api?username=Kingjha13&show_icons=true&theme=radical&bg_color=0f172a&border_color=334155&title_color=38bdf8&text_color=94a3b8" alt="GitHub Stats" />
         </div>
+        <div class="glass-panel" style="padding: 10px; text-align: center;">
+            <img class="stats-img" style="width: 100%; height: auto;" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kingjha13&layout=compact&theme=radical&bg_color=0f172a&border_color=334155&title_color=38bdf8&text_color=94a3b8" alt="Top Languages" />
+        </div>
+    </div>
 
-        <div class="glass-panel" style="margin-top: 20px;">
-            <h3 style="margin-bottom: 15px; font-size: 1rem; color: var(--primary);">Contribution Activity Graph</h3>
-            <img class="stats-img" style="border:none;" src="https://github-readme-activity-graph.vercel.app/graph?username=Kingjha13&theme=react-dark&bg_color=0f172a&hide_border=true&color=38bdf8" alt="Commit Activity" />
-        </div>
+    <!-- Activity Graph (Added horizontal scroll for tiny screens) -->
+    <div class="glass-panel" style="margin-top: 20px; padding: 15px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <h3 style="margin-bottom: 15px; font-size: 1rem; color: var(--primary);">Contribution Activity Graph</h3>
+        <img class="stats-img" style="border:none; min-width: 600px; height: auto;" src="https://github-readme-activity-graph.vercel.app/graph?username=Kingjha13&theme=react-dark&bg_color=0f172a&hide_border=true&color=38bdf8" alt="Commit Activity" />
+    </div>
 
-        <div class="glass-panel" style="margin-top: 20px; ">
-            <img class="stats-img" style="border:none; max-width: 500px;" src="https://github-readme-streak-stats.herokuapp.com/?user=Kingjha13&theme=radical&background=0f172a&border=334155&hide_border=true" alt="Streak" />
-        </div>
-    </section>
+    <!-- Streak Stats -->
+    <div class="glass-panel" style="margin-top: 20px; padding: 10px; text-align: center;">
+        <img class="stats-img" style="border:none; width: 100%; max-width: 500px; height: auto;" src="https://github-readme-streak-stats.herokuapp.com/?user=Kingjha13&theme=radical&background=0f172a&border=334155&hide_border=true" alt="Streak" />
+    </div>
+</section>
+
 
     <footer>
         <p>© 2025 • Avanish Kumar Jha • Android & AR Developer</p>
